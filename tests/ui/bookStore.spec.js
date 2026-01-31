@@ -7,7 +7,7 @@ const username = 'anusharaibagi'
 const password = 'Finac@123'
 
 test('Navigate to Book store application and validate cred', async({page})=>{
-    await page.goto('https://demoqa.com/');
+    await page.goto('https://demoqa.com/',{ timeout: 60000 });
     await page.waitForLoadState('networkidle');
     const totalApplication = page.locator('.card-body h5');
     await totalApplication.filter({hasText: 'Book Store Application'}).click();
